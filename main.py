@@ -3,16 +3,18 @@ from flask import Flask, render_template
 import os
 
 app = Flask(__name__)
-app.run(debug=False)
 
-#main file
+
+# main file
 @app.route('/')
 def home_page():
     return render_template('home.html')
+
+
 if __name__ == '__main__':
-    # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 8080))
-    app.run(host='0.0.0.0', port=port)
+    from waitress import serve
+
+    serve(app, host="0.0.0.0", port=8080)
 
 
 @app.route('/active_posts')
