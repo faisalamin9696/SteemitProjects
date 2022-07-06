@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{% block title %}
+Author Report
+{% endblock %}
+
+{% block content %}
+
+<center><h1>{{username}} Report</h1></center>
+<table id="data" class="table table-striped bg-dark table-dark">
+    <thead>
+    <tr>
+        <th>Author</th>
+        <th>Total Posts</th>
+        <th>Total Comments</th>
+        <th>Unique Comments</th>
+        <th>Profile</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ username }}</td>
+        <td>{{ get_comments(username)[0] }}</td>
+        <td>{{ get_comments(username)[1] }}</td>
+        <td>{{ get_comments(username)[0] }}</td>
+        <td>
+            <a href="https://www.steemit.com/@{{username}}/posts" target="_blank">Visit</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+{% endblock %}

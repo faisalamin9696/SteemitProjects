@@ -7,15 +7,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
 
     <link rel="stylesheet" href=
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+                    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
     </script>
     <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+                    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
     </script>
     <script src=
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+                    "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
     </script>
 
 </head>
@@ -28,7 +28,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent" >
+    <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="{{url_for('home_page')}}">Home</a>
@@ -36,6 +36,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{url_for('active_posts_page')}}">Active Posts</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('community_report_page', community = 'hive-129948')}}">Community
+                    Report</a>
+            </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
                     Select Community
@@ -66,6 +72,7 @@
     background-color: #212121;
     color: white
     }
+
 
 </style>
 </html>

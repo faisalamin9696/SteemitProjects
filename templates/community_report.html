@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+{% block title %}
+Author Report
+{% endblock %}
+
+{% block content %}
+
+<center><h1>{{username}} Report</h1></center>
+<table id="data" class="table table-striped bg-dark table-dark">
+    <thead>
+    <tr>
+        <th>Author</th>
+        <th>Total Posts</th>
+        <th>Total Comments</th>
+        <th>Unique Comments</th>
+        <th>Profile</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in items_rows %}
+    <tr>
+        <td>{{ item[items_cols.author] }}</td>
+        <td>{{ item[items_cols.total_post_count] }}</td>
+        <td>{{ item[items_cols.total_comment_count] }}</td>
+        <td>{{ item[items_cols.unique_comment_count] }}</td>
+        <td>
+            <a href="https://www.steemit.com/@{{username}}/posts" target="_blank">Visit</a>
+        </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+
+{% block scripts%}
+<script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns: [
+          null,
+          {orderable: true, searchable: false},
+          {orderable: true, searchable: false},
+          {orderable: true, searchable: false},
+          {orderable: false, searchable: false}],
+
+      });
+    });
+
+
+</script>
+{% endblock %}

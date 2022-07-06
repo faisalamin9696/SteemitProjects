@@ -1,8 +1,10 @@
+import json
+
 import requests
 
-response = requests.get(url='https://sds.steemworld.org/communities_api/getCommunitiesByCountActivePosts').json()
-cols_res = response['result']['cols']
-rows_res = response['result']['rows']
+response = requests.get(url='https://sds0.steemworld.org/feeds_api/getActiveCommunityAuthorReport/hive-101145/skuld2000').json()
+result = response['result']
+comments_count = result["total_comment_count"]
 
-print(rows_res)
 
+print(comments_count)
