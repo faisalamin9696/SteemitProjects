@@ -10,8 +10,8 @@ def home_page():
     return render_template('home.html')
 
 
-if __name__ == "__app__":
-    app.run(debug=False, host="0.0.0.0")
+if __name__ == "__main__":
+    app.run(debug=False, host="0.0.0.0", port=3000)
 
 
 @app.route('/active_posts')
