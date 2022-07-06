@@ -3,4 +3,4 @@ py -m venv env
 env\Scripts\activate
 pip install flask
 set FLASK_APP=main.py
-$env:FLASK_APP = "hello.py"
+$env:FLASK_APP = "main.py"
