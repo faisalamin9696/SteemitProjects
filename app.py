@@ -10,8 +10,10 @@ def home_page():
     return render_template('home.html')
 
 
-if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=3000)
+if __name__ == '__main__':
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
 
 
 @app.route('/active_posts')
